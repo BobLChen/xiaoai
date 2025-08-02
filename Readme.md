@@ -1,3 +1,16 @@
+# 简介
+
+本项目的目的：
+- 将小爱的事件全部转发出来
+- 远程操作小爱执行命令
+
+当小爱的全部事件转发出来之后，我们即可跟着事件进行解析，然后根据自己的需求完成对应的操作，例如接入**Home Assistant**、或者接入AI、或者调用自己的各种传感器控制器，一切皆有可能。
+
+由于本人从未接触过rust，本项目的rust部分代码基本来自于https://github.com/idootop/open-xiaoai项目。
+
+# 刷机
+刷机教程看这个：https://github.com/idootop/open-xiaoai/blob/main/docs/flash.md
+
 # 构建xiaoai程序
 
 **重要**:构建在windows上面完成，mac下我暂时没搞定。
@@ -50,15 +63,17 @@ cd /data/xiaoai/
 
 4、设置server地址
 ```
+# server地址为python你自己设定的地址以及端口号
 echo 'ws://192.168.2.83:8092' > /data/xiaoai/server.txt
 ```
 
 5、下载程序到小爱
 ```
-# 本地python简易http服务覆盖的地址
+# http://192.168.2.83:8001/xiaoai/target/armv7-unknown-linux-gnueabihf/release/xiaoai为你本地python简易http服务覆盖的地址
 curl -L -# -o xiaoai http://192.168.2.83:8001/xiaoai/target/armv7-unknown-linux-gnueabihf/release/xiaoai
 
 # 启动程序
+# 注意如果执行报错，检查一下init.sh结尾是不是LF，在VSCode里面右下角CRLF改成LF。
 curl -sSfL http://192.168.2.83:8001/xiaoai/init.sh | sh
 ```
 
