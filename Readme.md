@@ -6,7 +6,7 @@
 
 当小爱的全部事件转发出来之后，我们即可跟着事件进行解析，然后根据自己的需求完成对应的操作，例如接入**Home Assistant**、或者接入AI、或者调用自己的各种传感器控制器，一切皆有可能。
 
-由于本人从未接触过rust，本项目的rust部分代码基本来自于https://github.com/idootop/open-xiaoai项目。
+由于本人从未接触过rust，本项目的rust部分代码基本来自于https://github.com/idootop/open-xiaoai。
 
 # 刷机
 刷机教程看这个：https://github.com/idootop/open-xiaoai/blob/main/docs/flash.md
